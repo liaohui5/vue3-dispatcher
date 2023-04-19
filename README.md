@@ -18,3 +18,7 @@
 [普通开发模式和 taskReducer 模式对比](https://github.com/liaohui5/vue3-dispatcher-demo)
 
 [实际项目应用](https://github.com/lh5sa/vue3-client)
+
+## TODO
+
+基本逻辑写完了没有问题, 但是 ts 类型约束还有点问题, 导致 ts 爆红, 而且代码提示有点问题

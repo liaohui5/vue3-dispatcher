@@ -26,6 +26,6 @@ describe('setGlobalErrorHandler', () => {
     q1.execute({}, {});
 
     expect(globalOnError).not.toBeCalled();
-    expect(onError).not.toBeCalled();
+    expect(onError).toBeCalled();
   });
 });
