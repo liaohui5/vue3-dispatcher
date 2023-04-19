@@ -6,7 +6,7 @@ export class AsyncTaskQueue implements AsyncTaskQueueInterface {
   public taskQueue: TaskQueue;
   constructor(
     public asyncTask: (payload: object) => Promise<any>,
-    public tasks: Array<TaskItemFunction>,
+    public tasks: Array<CallableFunction>,
     public onError?: CallableFunction
   ) {
     this.taskQueue = createTaskQueue(this.tasks, this.onError);

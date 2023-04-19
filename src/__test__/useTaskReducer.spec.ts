@@ -8,6 +8,7 @@ describe('useTaskReducer', () => {
       count: 0,
     };
 
+    // TODO: how to add typescript support for paramters object
     const setCountTask = (state: object, { payload }) => (state.count = payload);
     const collection: TaskQueueCollection = [
       {

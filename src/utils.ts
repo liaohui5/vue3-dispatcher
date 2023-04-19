@@ -18,6 +18,6 @@ export function isObject(value: any): boolean {
 /**
  *is instanceof TaskQueue or AsyncTaskQueue or not
  */
-export function isQueue(value: any) {
+export function isQueue(value: any): boolean {
   return Boolean(value instanceof TaskQueue || value instanceof AsyncTaskQueue);
 }

@@ -1,7 +1,7 @@
 import { isFunction } from '../utils';
 
 export class TaskQueue implements TaskQueueInterface {
-  constructor(public tasks: Array<TaskItemFunction>, public onError?: CallableFunction) {}
+  constructor(public tasks: Array<CallableFunction>, public onError?: CallableFunction) { }
 
   execute(state: object, payload: object, response?: object): void {
     try {

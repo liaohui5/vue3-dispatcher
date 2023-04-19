@@ -3,31 +3,30 @@ interface TaskQueueExecutor {
   (state: object, payload: object, response?: object): void;
 }
 
-// task function item
-interface TaskItemFunction {
-  (state: object, { payload: any, response: object, prevTaskResult: any }): any;
-}
+// TaskQueue
 interface TaskQueueInterface {
   tasks: Array<TaskItemFunction>;
   onError?: CallableFunction;
   execute: TaskQueueExecutor;
 }
 
+// AsyncTaskQueue
 interface AsyncTaskQueueInterface extends TaskQueueInterface {
   asyncTask: (payload: object) => Promise<any>;
   taskQueue: TaskQueueInterface;
 }
 
+// TaskQueueCollection
 interface TaskQueueCollectionItem {
   type: string;
   queue: AsyncTaskQueue | TaskQueue;
 }
 type TaskQueueCollection = Array<TaskQueueCollectionItem> | Set<TaskQueueCollectionItem>;
 
-// get executor fucntion in collection
+// notify: get executor fucntion
 type GetExecutorInCollection = (targetType: string, collection: TaskQueueCollection) => TaskQueueExecutor | void;
 
-// dispatch function
+// dispatch: dispatch function
 type Dispatcher = (type: string) => (payload: any) => any;
 interface ReducerResult {
   dispatch: Dispatcher;
